@@ -83,7 +83,7 @@ if __name__ == "__main__":
     create_championship_table(cursor, "db_games", "premiere_league")
     show_tables(cursor, "db_games")
 
-    # lendo e adicionando os dados
+    # reading and adding data
     df = read_csv("/home/orlando_linux/pipeline-python-mongo-mysql/data_teste/tabela.csv")
     add_data(cnx, cursor, df, "db_games", "premiere_league")
 
