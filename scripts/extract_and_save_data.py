@@ -29,12 +29,12 @@ def create_connect_collection(db, col_name):
 
 def extract_api_data():    
     league_id = 152 #PremiereLeague
-    api_key = "39d6200996e3a32617a5c7c4cf4fdafc309a3abe279b307c1eecb31a43c41a74"    
+    api_football_key = os.environ.get("API_FOOTBALL_KEY")    
     today = date.today()
     # Extract data from seven days ago up to today
     week_ago = today - timedelta(days=50)
    
-    url_base = f"https://apiv3.apifootball.com/?action=get_events&from={week_ago}&to={today}&league_id={league_id}&APIkey={api_key}"
+    url_base = f"https://apiv3.apifootball.com/?action=get_events&from={week_ago}&to={today}&league_id={league_id}&APIkey={api_football_key}"
     response = requests.get(url_base).json()
     return response
     
