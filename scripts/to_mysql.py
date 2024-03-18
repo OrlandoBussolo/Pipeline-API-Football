@@ -70,16 +70,16 @@ def add_data(cnx, cursor, df, db_name, tb_name):
 
 if __name__ == "__main__":
     
-    # realizando a conexão com mysql
+    # connecting to mysql
     pw_mysql = os.environ.get("PW_MYSQL")    
     cnx = connect_mysql("localhost", "orlando_bussolo", pw_mysql)
     cursor = create_cursor(cnx)
 
-    # criando a base de dados
+    # creating database
     create_database(cursor, "db_games")
     show_databases(cursor)
 
-    # criando tabela
+    # creating table
     create_championship_table(cursor, "db_games", "premiere_league")
     show_tables(cursor, "db_games")
 
