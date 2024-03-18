@@ -33,7 +33,8 @@ def save_csv(df, path):
 
 if __name__ == "__main__":
     # estabelecendo a conexão e recuperando os dados do MongoDB
-    client = connect_mongo("mongodb+srv://orlandobussolo:asdfg123@cluster-pipeline.pmkfr1g.mongodb.net/?retryWrites=true&w=majority&appName=cluster-pipeline")
+    pw_mongo = os.environ.get("PW_MONGODB")
+    client = connect_mongo(f"mongodb+srv://orlandobussolo:{pw_mongo}@cluster-pipeline.pmkfr1g.mongodb.net/?retryWrites=true&w=majority&appName=cluster-pipeline")
     db =  create_connect_db(client, "db_games")
     col = create_connect_collection(db, "premiere_league")
 

@@ -1,6 +1,7 @@
 import mysql.connector
 import pandas as pd
 import numpy as np
+import os
 
 def connect_mysql(host_name, user_name, pw):
     cnx = mysql.connector.connect(
@@ -70,7 +71,8 @@ def add_data(cnx, cursor, df, db_name, tb_name):
 if __name__ == "__main__":
     
     # realizando a conexão com mysql
-    cnx = connect_mysql("localhost", "orlando_bussolo", "asdfg...")
+    pw_mysql = os.environ.get("PW_MYSQL")    
+    cnx = connect_mysql("localhost", "orlando_bussolo", pw_mysql)
     cursor = create_cursor(cnx)
 
     # criando a base de dados
