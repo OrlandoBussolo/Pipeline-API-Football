@@ -5,7 +5,6 @@ from datetime import date, timedelta
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-
 def connect_mongo(uri):    
     # Create a new client and connect to the server
     client = MongoClient(uri, server_api=ServerApi('1'))
