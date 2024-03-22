@@ -19,7 +19,6 @@ CREATE TABLE IF NOT EXISTS PL_points (
     points INT
 )
 """
-
 # Execute the SQL command to create the table
 cursor.execute(create_table_query)
 
@@ -47,7 +46,6 @@ GROUP BY team_name
 ORDER BY SUM(points) DESC
 
 """
-
 # Execute the SQL query
 cursor.execute(consulta_sql)
 
