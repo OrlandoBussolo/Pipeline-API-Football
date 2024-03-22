@@ -68,6 +68,11 @@ def add_data(cnx, cursor, df, db_name, tb_name):
     print(f"\n {cursor.rowcount} dados foram inseridos na tabela {tb_name}.")
     cnx.commit()
 
+    # Fechar o cursor e a conexão
+    cursor.close()
+    
+
+
 if __name__ == "__main__":
     
     # connecting to mysql
@@ -86,4 +91,5 @@ if __name__ == "__main__":
     # reading and adding data
     df = read_csv("/home/orlando_linux/pipeline-python-mongo-mysql/data_teste/tabela.csv")
     add_data(cnx, cursor, df, "db_games", "premiere_league")
+    cnx.close()
 
